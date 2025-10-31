@@ -1018,233 +1018,139 @@ document.addEventListener("DOMContentLoaded", function () {
        
 
         
-  <!-- 🔹交通資訊區塊（最完整高質感版） -->
-<section id="transport-section">
-  <h2 class="section-title">交通資訊</h2>
+    <div class="transport-info">
+    <h2 class="title">臺北市立懷愛館</h2>
+    <p class="subtitle">懷恩專車＆停車資訊</p>
 
-  <div class="transport-details">
-    <!-- 📍地點 -->
-    <div class="transport-item">
-      <h3>📍 桃園市立殯儀館</h3>
-      <p><strong>地址：</strong>桃園市桃園區大有路920號</p>
-    </div>
-
-    
-
-    <!-- 🚍 公車 -->
-    <div class="transport-item">
-      <h4>🚍 大眾運輸</h4>
-      <p><strong>公車（市立殯儀館站）：</strong><br>
-        搭乘桃園客運105號、220號（環狀紅線）或707號公車，可直達大門口。<br>
-        亦可搭乘桃園客運105或707（含支線）在市立殯儀館站下車。
-      </p>
-      <p><strong>公車（公園都市站）：</strong><br>
-        搭乘桃園客運302號或統聯客運168號公車，在公園都市站下車，步行約10分鐘可達。
-      </p>
-      <p><strong>公車（春日路、健行路口站）：</strong><br>
-        搭乘桃園客運5014、5014A、5022、5022A、5071、711號公車，在春日路、健行路口站下車後步行約15分鐘。
-      </p>
-    </div>
-
-
-
-  <!-- 🖼️ 殯儀館導引圖與停車資訊 -->
-  <div class="transport-image-area">
-    <h2 class="title">殯儀館導引圖與停車資訊</h2>
-    <p class="subtitle">點擊圖片可放大查看</p>
+    <!-- 圖片展示 -->
     <div class="image-gallery">
-      <img src="image/IMG_0133.jpeg" alt="殯儀館資訊" class="gallery-img" loading="lazy">
-      <img src="image/IMG_0158.jpeg" alt="地圖" class="gallery-img" loading="lazy">
-      <img src="image/IMG_0160.jpeg" alt="停車資訊" class="gallery-img" loading="lazy">
+        <img src="image/交通00004.GIF" alt="S31" class="gallery-img" aria-label="交通指引" loading="lazy">
+        <img src="image/交通00005.GIF" alt="S32" class="gallery-img" aria-label="交通指引" loading="lazy">
+        <img src="image/交通00003.GIF" alt="S33" class="gallery-img" aria-label="交通指引" loading="lazy">
+        <img src="image/交通00002.GIF" alt="S34" class="gallery-img" aria-label="交通指引" loading="lazy">
+        <img src="image/交通00001.GIF" alt="S35" class="gallery-img" aria-label="交通指引" loading="lazy">
+        <img src="image/交通00007.JPG" alt="搭車資訊" class="gallery-img" aria-label="搭車資訊" loading="lazy">
+        <img src="image/交通00008.JPG" alt="交通指引" class="gallery-img" aria-label="交通指引" loading="lazy">
+        <img src="image/交通00009.JPG" alt="指引圖" class="gallery-img" aria-label="指引圖" loading="lazy">
+        <img src="image/交通00006.JPG" alt="停車資訊" class="gallery-img" aria-label="停車資訊" loading="lazy">
     </div>
-  </div>
-</section>
+</div>
 
-<!-- 🎨 樣式 -->
 <style>
-#transport-section {
-  background: #fdfdfd;
-  border-radius: 12px;
-  padding: 40px 25px;
-  margin: 50px auto;
-  max-width: 950px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-family: "Iansui", "Noto Sans TC", "微軟正黑體", sans-serif;
-}
+    :root {
+        --primary-bg-color: #f9f9f9;
+        --title-color: #333;
+        --subtitle-color: #555;
+        --image-border-radius: 10px;
+        --hover-scale: 1.08;
+        --transition-duration: 0.3s;
+        --box-shadow: rgba(0, 0, 0, 0.1) 0 6px 12px;
+    }
 
-.section-title {
-  font-size: 1.9rem;
-  text-align: center;
-  color: #2a2a2a;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
-  position: relative;
-}
-.section-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: #c49b57;
-  margin: 10px auto 0;
-  border-radius: 3px;
-}
+    /* 整體容器 */
+    .transport-info {
+        padding: 20px;
+        background-color: var(--primary-bg-color);
+        border-radius: var(--image-border-radius);
+        margin-top: 20px;
+        text-align: center;
+        box-shadow: var(--box-shadow);
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.transport-item h3, .transport-item h4 {
-  color: #3b3b6d;
-  margin-bottom: 10px;
-}
-.transport-item p {
-  color: #444;
-  line-height: 1.8;
-  margin: 5px 0;
-  font-size: 1rem;
-  text-align: justify;
-}
+    /* 標題樣式 */
+    .title {
+        font-family: 'Arial', sans-serif;
+        color: var(--title-color);
+        font-size: 23px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+    }
 
-.map-container {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+    /* 副標題樣式 */
+    .subtitle {
+        font-family: 'Arial', sans-serif;
+        color: var(--subtitle-color);
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+    }
 
-.map-btn {
-  text-align: center;
-  margin-top: 20px;
-}
+    /* 圖片畫廊 */
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        justify-items: center;
+    }
 
-.map-link {
-  display: inline-block;
-  background: linear-gradient(135deg, #cfa24b, #a57a28);
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 6px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-}
-.map-link:hover {
-  background: linear-gradient(135deg, #b78939, #8c6924);
-  transform: translateY(-2px);
-}
+    /* 圖片樣式 */
+    .gallery-img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--image-border-radius);
+        transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+        cursor: pointer;
+    }
 
-/* 圖片區 */
-.transport-image-area {
-  margin-top: 50px;
-  text-align: center;
-}
-.transport-image-area .title {
-  font-size: 1.5rem;
-  color: #3b3b6d;
-  margin-bottom: 8px;
-}
-.transport-image-area .subtitle {
-  font-size: 0.95rem;
-  color: #777;
-  margin-bottom: 15px;
-}
-.image-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-.gallery-img {
-  width: 30%;
-  min-width: 240px;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-.gallery-img:hover {
-  transform: scale(1.05);
-}
+    /* 懸停效果 */
+    .gallery-img:hover {
+        transform: scale(var(--hover-scale));
+        box-shadow: rgba(0, 0, 0, 0.2) 0 8px 16px;
+    }
 
-/* 🔹燈箱樣式 */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeIn 0.3s ease;
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-}
-@keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
-}
+    /* 響應式設計：圖片調整 */
+    @media (max-width: 600px) {
+        .gallery-img {
+            width: 90%;
+        }
+    }
 
-/* 🔹響應式 */
-@media (max-width: 768px) {
-  #transport-section { padding: 30px 18px; }
-  .section-title { font-size: 1.6rem; }
-  .transport-item p { font-size: 0.95rem; }
-  .map-container iframe { height: 260px; }
-  .map-link { width: 100%; padding: 14px 0; font-size: 1rem; }
-  .gallery-img { width: 90%; }
-}
+    /* 燈箱樣式 */
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+    }
 </style>
 
-<!-- 💡 燈箱 JS -->
 <script>
-document.querySelectorAll(".gallery-img").forEach(img => {
-  img.addEventListener("click", () => {
-    const lightbox = document.createElement("div");
-    lightbox.className = "lightbox";
-    const image = document.createElement("img");
-    image.src = img.src;
-    image.alt = img.alt;
-    lightbox.appendChild(image);
-    document.body.appendChild(lightbox);
-    lightbox.addEventListener("click", () => lightbox.remove());
-  });
-});
+    // 點擊圖片時顯示燈箱
+    document.querySelectorAll(".gallery-img").forEach(img => {
+        img.addEventListener("click", function() {
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+
+            const lightboxImg = document.createElement("img");
+            lightboxImg.src = this.src;
+
+            lightbox.appendChild(lightboxImg);
+            document.body.appendChild(lightbox);
+
+            // 點擊燈箱時關閉
+            lightbox.addEventListener("click", () => {
+                lightbox.remove();
+            });
+        });
+    });
 </script>
-<style>
-  .lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-    </style>
         <!-- 🗺️ Google 地圖 -->
     <div class="map-container">
            <!-- 地圖嵌入 -->
