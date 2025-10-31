@@ -776,9 +776,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </style>
         
          
-
-
-  <!-- 名片區 -->
+<!-- 名片區 -->
 <section id="business-card">
   <img src="image/未命名設計.png" alt="名片" class="business-card-img" loading="lazy">
 </section>
@@ -1015,10 +1013,8 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 </style>
        
-       
-
-        
-    <div class="transport-info">
+<div>
+   <div class="transport-info">
     <h2 class="title">臺北市立懷愛館</h2>
     <p class="subtitle">懷恩專車＆停車資訊</p>
 
@@ -1108,69 +1104,55 @@ document.addEventListener("DOMContentLoaded", function () {
         .gallery-img {
             width: 90%;
         }
-    }
 
     /* 燈箱樣式 */
-    .lightbox {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-    }
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    animation: fadeInLightbox 0.3s forwards;
+}
 
-    .lightbox img {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 10px;
-    }
-</style>
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
 
+@keyframes fadeInLightbox {
+    to { opacity: 1; }
+}
+        </style>
+        
 <script>
-    // 點擊圖片時顯示燈箱
-    document.querySelectorAll(".gallery-img").forEach(img => {
-        img.addEventListener("click", function() {
-            const lightbox = document.createElement("div");
-            lightbox.classList.add("lightbox");
+// 燈箱功能
+document.querySelectorAll(".image-gallery img").forEach(img => {
+    img.addEventListener("click", function() {
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
 
-            const lightboxImg = document.createElement("img");
-            lightboxImg.src = this.src;
+        const lightboxImg = document.createElement("img");
+        lightboxImg.src = this.src;
+        lightbox.appendChild(lightboxImg);
+        document.body.appendChild(lightbox);
 
-            lightbox.appendChild(lightboxImg);
-            document.body.appendChild(lightbox);
-
-            // 點擊燈箱時關閉
-            lightbox.addEventListener("click", () => {
-                lightbox.remove();
-            });
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) lightbox.remove();
         });
     });
+});
 </script>
-        <!-- 🗺️ Google 地圖 -->
-    <div class="map-container">
-           <!-- 地圖嵌入 -->
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6055113137354!2d121.55302529999999!3d25.0135172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa3b0390f463%3A0x9082f68f52193107!2z5Y-w5YyX5biC5oe35oSb6aSo!5e0!3m2!1szh-TW!2stw!4v1723546074779!5m2!1szh-TW!2stw"
-        width="100%" 
-        height="350" 
-        frameborder="0" allowfullscreen
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</section>
 
-
-
-    </div>
-
-    <!-- 🔗 開啟導航按鈕 -->
+        <!-- 🔗 開啟導航按鈕 -->
     <div class="transport-item map-btn">
       <a class="map-link" href="https://maps.app.goo.gl/giYbFyLcMZkBiTjt8" target="_blank">
         📍 開啟 Google 導航地圖
@@ -1298,6 +1280,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 }
 </style>
+
+              
+
+<div>
 <!-- 页脚 -->
 <footer style="background-color: #f3f3f3; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;">
     <!-- 名片內容 -->
@@ -1332,7 +1318,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <strong class="fit-text">承辦禮儀公司 祥安生命有限公司 ｜ 禮儀師：陳柏元</strong>
     </p>
     <p class="footer-text">
-      <strong class="fit-text">© 2025 詹政雄先生 訃告 ｜ <span class="highlight">祥安生命有限公司</span> 版權所有</strong>
+      <strong class="fit-text">© 2025詹政雄先生 訃告 ｜ <span class="highlight">祥安生命有限公司</span> 版權所有</strong>
     </p>
   </div>
 </footer>
@@ -1462,6 +1448,12 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 </script>
               
+
+</div>
+    
+
+
+
 </body>
 </div>
 
